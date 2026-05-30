@@ -16,6 +16,7 @@ A single-page restaurant website for **金龍閣 Golden Dragon Pavilion**, an im
 - Balloon drop celebration — 28 coloured balloons rise with swaying animation on form success
 - Light / dark theme toggle with OS preference detection and `localStorage` persistence
 - WhatsApp Business floating-action button (bottom-right) linking to +65 9125 6169
+- FAQ floating-action button (gold, above WhatsApp FAB) opening an accessible accordion modal with 15 Q&A pairs across 5 sections — doubles as a RAG knowledge base (`FAQ.md`)
 - Fully responsive design — mobile, tablet, desktop (hamburger nav at 768 px)
 - Accessible: skip link, ARIA labels, `aria-live` regions, focus-visible outlines
 
@@ -39,9 +40,10 @@ No server, package manager, or install step required.
 ## Project Structure
 
 ```
-├── index.html      # All markup — nav, hero, menu, testimonials, reservations, footer
+├── index.html      # All markup — nav, hero, menu, testimonials, reservations, footer, FABs
 ├── styles.css      # All styles — CSS variables, BEM classes, responsive breakpoints
-└── script.js       # Single IIFE — nav scroll, hamburger, theme toggle, carousel, form validation
+├── script.js       # Single IIFE — nav scroll, hamburger, theme toggle, carousel, form validation, FAQ modal
+└── FAQ.md          # Mock FAQ knowledge base (30 Q&A pairs) — for RAG / chatbot integration
 ```
 
 ### Custom agents & skills
