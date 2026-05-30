@@ -1,36 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-SG">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Maison Le Bleu — Authentic French fine dining in the heart of Singapore. Reserve your table today." />
-  <title>Maison Le Bleu — French Fine Dining</title>
+  <meta name="description" content="金龍閣 Golden Dragon Pavilion — Imperial Chinese fine dining in the heart of Singapore. Reserve your table today." />
+  <title>金龍閣 · Golden Dragon Pavilion — Chinese Fine Dining</title>
 
-  <!-- Google Fonts: Cormorant Garamond (serif) + Montserrat (sans-serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Skip-to-content for keyboard users -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ══════════════════════════════════════
-       NAVIGATION
-  ══════════════════════════════════════ -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
-      <a href="#" class="nav__logo" aria-label="Maison Le Bleu — home">
-        <span class="nav__logo-text">Maison Le Bleu</span>
+      <a href="#" class="nav__logo" aria-label="Golden Dragon Pavilion — home">
+        <span class="nav__logo-text"><span class="nav__logo-cn">金龍閣</span> · Golden Dragon Pavilion</span>
       </a>
 
       <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileOverlay">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
 
       <ul class="nav__links" role="list">
@@ -41,7 +34,6 @@
     </div>
   </nav>
 
-  <!-- Mobile overlay -->
   <div class="nav__overlay" id="mobileOverlay" aria-hidden="true">
     <ul class="nav__overlay-links" role="list">
       <li><a href="#menu"         class="nav__overlay-link">Menu</a></li>
@@ -52,48 +44,85 @@
 
   <main id="main-content">
 
-    <!-- ══════════════════════════════════════
-         HERO
-    ══════════════════════════════════════ -->
-    <section class="hero" aria-label="Welcome to Maison Le Bleu">
-      <div class="hero__bg" role="img" aria-label="Elegant candlelit French restaurant dining room"></div>
+    <!-- HERO -->
+    <section class="hero" aria-label="Welcome to Golden Dragon Pavilion">
+      <div class="hero__bg" role="img" aria-label="Opulent Chinese fine dining room with red lanterns and gold accents"></div>
+
+      <div class="hero__lanterns" aria-hidden="true">
+        <div class="hero__lantern hero__lantern--left">
+          <svg viewBox="0 0 60 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="30" y1="0" x2="30" y2="14" stroke="#D4AF37" stroke-width="2"/>
+            <rect x="18" y="8" width="24" height="8" rx="3" fill="#D4AF37"/>
+            <ellipse cx="30" cy="22" rx="18" ry="5" fill="#D4AF37"/>
+            <path d="M12 26 Q4 58 12 90 Q20 100 30 100 Q40 100 48 90 Q56 58 48 26 Q40 16 30 16 Q20 16 12 26Z" fill="#C41E3A"/>
+            <path d="M12 26 Q4 58 12 90" stroke="#8B0000" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M48 26 Q56 58 48 90" stroke="#8B0000" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M22 18 Q18 58 22 98" stroke="#8B0000" stroke-width="1" fill="none" opacity="0.3"/>
+            <path d="M38 18 Q42 58 38 98" stroke="#8B0000" stroke-width="1" fill="none" opacity="0.3"/>
+            <text x="30" y="68" text-anchor="middle" font-size="30" fill="#D4AF37" font-family="serif" opacity="0.9">福</text>
+            <ellipse cx="30" cy="98" rx="18" ry="5" fill="#D4AF37"/>
+            <line x1="30" y1="103" x2="30" y2="115" stroke="#D4AF37" stroke-width="2"/>
+            <line x1="22" y1="115" x2="28" y2="132" stroke="#D4AF37" stroke-width="1.5" opacity="0.8"/>
+            <line x1="30" y1="115" x2="30" y2="134" stroke="#D4AF37" stroke-width="1.5" opacity="0.8"/>
+            <line x1="38" y1="115" x2="32" y2="132" stroke="#D4AF37" stroke-width="1.5" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="hero__lantern hero__lantern--right">
+          <svg viewBox="0 0 60 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="30" y1="0" x2="30" y2="14" stroke="#D4AF37" stroke-width="2"/>
+            <rect x="18" y="8" width="24" height="8" rx="3" fill="#D4AF37"/>
+            <ellipse cx="30" cy="22" rx="18" ry="5" fill="#D4AF37"/>
+            <path d="M12 26 Q4 58 12 90 Q20 100 30 100 Q40 100 48 90 Q56 58 48 26 Q40 16 30 16 Q20 16 12 26Z" fill="#C41E3A"/>
+            <path d="M12 26 Q4 58 12 90" stroke="#8B0000" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M48 26 Q56 58 48 90" stroke="#8B0000" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M22 18 Q18 58 22 98" stroke="#8B0000" stroke-width="1" fill="none" opacity="0.3"/>
+            <path d="M38 18 Q42 58 38 98" stroke="#8B0000" stroke-width="1" fill="none" opacity="0.3"/>
+            <text x="30" y="68" text-anchor="middle" font-size="30" fill="#D4AF37" font-family="serif" opacity="0.9">壽</text>
+            <ellipse cx="30" cy="98" rx="18" ry="5" fill="#D4AF37"/>
+            <line x1="30" y1="103" x2="30" y2="115" stroke="#D4AF37" stroke-width="2"/>
+            <line x1="22" y1="115" x2="28" y2="132" stroke="#D4AF37" stroke-width="1.5" opacity="0.8"/>
+            <line x1="30" y1="115" x2="30" y2="134" stroke="#D4AF37" stroke-width="1.5" opacity="0.8"/>
+            <line x1="38" y1="115" x2="32" y2="132" stroke="#D4AF37" stroke-width="1.5" opacity="0.8"/>
+          </svg>
+        </div>
+      </div>
+
       <div class="hero__content">
-        <div class="hero__ornament" aria-hidden="true"></div>
-        <h1 class="hero__title">Maison Le Bleu</h1>
-        <p class="hero__tagline">Authentic French cuisine in the heart of the city</p>
-        <a href="#reservations" class="btn btn--outline">Reserve a Table</a>
+        <div class="hero__ornament" aria-hidden="true">
+          <span class="hero__ornament-cn">金龍閣</span>
+        </div>
+        <h1 class="hero__title">Golden Dragon Pavilion</h1>
+        <p class="hero__tagline">Imperial Chinese Fine Dining · Singapore</p>
+        <a href="#reservations" class="btn btn--outline">Reserve a Table · 訂座</a>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════
-         MENU
-    ══════════════════════════════════════ -->
+    <!-- MENU -->
     <section class="section menu" id="menu" aria-labelledby="menu-heading">
       <div class="container">
 
         <div class="section__header fade-in">
-          <span class="section__label">Notre Menu</span>
-          <h2 class="section__title" id="menu-heading">Our Menu</h2>
-          <p class="section__subtitle">A celebration of classical French technique and the finest seasonal ingredients</p>
+          <span class="section__label">菜單 · Our Menu</span>
+          <h2 class="section__title" id="menu-heading">Signature Dishes</h2>
+          <p class="section__chinese" aria-hidden="true">精品佳餚</p>
+          <p class="section__subtitle">A culinary journey through China's imperial kitchens — each dish crafted with the finest seasonal ingredients and centuries of tradition</p>
         </div>
 
-        <!-- ── Entrées ── -->
+        <!-- 前菜 Starters -->
         <div class="menu__category">
-          <h3 class="menu__category-title fade-in">Entrées</h3>
+          <h3 class="menu__category-title fade-in"><span lang="zh">前菜</span> · Starters</h3>
           <div class="menu__grid">
 
             <article class="dish-card fade-in">
               <div class="dish-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=400&fit=crop&q=80"
-                  alt="Escargots de Bourgogne — Burgundy snails baked in garlic herb butter, served in their shells"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
+                  src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&h=400&fit=crop&q=80"
+                  alt="Xiao Long Bao — Shanghainese soup dumplings with pork and ginger broth"
+                  class="dish-card__img" loading="lazy" />
               </div>
               <div class="dish-card__body">
-                <h4 class="dish-card__name">Escargots de Bourgogne</h4>
-                <p class="dish-card__desc">Burgundy snails baked in classic garlic and parsley butter, served with toasted brioche</p>
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">小籠包</span> Xiao Long Bao</h4>
+                <p class="dish-card__desc">Gossamer-thin wrappers encasing hand-minced pork and a pool of fragrant ginger broth — the jewel of Shanghainese dim sum</p>
                 <div class="dish-card__footer">
                   <span class="dish-card__price">S$28</span>
                   <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
@@ -104,17 +133,15 @@
             <article class="dish-card fade-in">
               <div class="dish-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop&q=80"
-                  alt="Soupe à l'Oignon — classic French onion soup with melted Gruyère cheese crust"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
+                  src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=400&fit=crop&q=80"
+                  alt="Imperial Bird's Nest Soup — double-boiled swiftlet nest with rock sugar"
+                  class="dish-card__img" loading="lazy" />
               </div>
               <div class="dish-card__body">
-                <h4 class="dish-card__name">Soupe à l'Oignon</h4>
-                <p class="dish-card__desc">Slow-caramelised onion broth topped with a golden Gruyère and croûton crust</p>
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">帝皇燕窩</span> Imperial Bird's Nest</h4>
+                <p class="dish-card__desc">Double-boiled wild-harvested swiftlet nest in a delicate rock sugar broth with goji berries and red dates — a timeless imperial tonic</p>
                 <div class="dish-card__footer">
-                  <span class="dish-card__price">S$24</span>
+                  <span class="dish-card__price">S$88</span>
                   <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
                 </div>
               </div>
@@ -124,16 +151,14 @@
               <div class="dish-card__img-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&h=400&fit=crop&q=80"
-                  alt="Foie Gras Poêlé — pan-seared duck foie gras with Sauternes reduction and fig compote"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
+                  alt="Char Siu Pastry — flaky pastry with honey-glazed Ibérico pork"
+                  class="dish-card__img" loading="lazy" />
               </div>
               <div class="dish-card__body">
-                <h4 class="dish-card__name">Foie Gras Poêlé</h4>
-                <p class="dish-card__desc">Pan-seared duck foie gras with Sauternes reduction, fig compote, and toasted brioche</p>
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">叉燒酥</span> Char Siu Pastry</h4>
+                <p class="dish-card__desc">Shatteringly flaky pastry filled with honey-glazed Ibérico pork, crowned with toasted black sesame and a thread of spun gold sugar</p>
                 <div class="dish-card__footer">
-                  <span class="dish-card__price">S$48</span>
+                  <span class="dish-card__price">S$24</span>
                   <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
                 </div>
               </div>
@@ -142,25 +167,23 @@
           </div>
         </div>
 
-        <!-- ── Plats Principaux ── -->
+        <!-- 主菜 Main Courses -->
         <div class="menu__category">
-          <h3 class="menu__category-title fade-in">Plats Principaux</h3>
+          <h3 class="menu__category-title fade-in"><span lang="zh">主菜</span> · Main Courses</h3>
           <div class="menu__grid">
 
             <article class="dish-card fade-in">
               <div class="dish-card__img-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&h=400&fit=crop&q=80"
-                  alt="Coq au Vin — slow-braised chicken in Burgundy red wine with lardons, pearl onions, and mushrooms"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
+                  alt="Peking Roast Duck — Imperial Court recipe carved tableside with pancakes and hoisin"
+                  class="dish-card__img" loading="lazy" />
               </div>
               <div class="dish-card__body">
-                <h4 class="dish-card__name">Coq au Vin</h4>
-                <p class="dish-card__desc">Free-range chicken slow-braised in Burgundy wine with lardons, pearl onions, and wild mushrooms</p>
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">北京烤鴨</span> Peking Roast Duck</h4>
+                <p class="dish-card__desc">Imperial Court recipe — lacquered duck carved tableside, served with hand-rolled pancakes, julienned scallion, cucumber, and aged hoisin</p>
                 <div class="dish-card__footer">
-                  <span class="dish-card__price">S$52</span>
+                  <span class="dish-card__price">S$128</span>
                   <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
                 </div>
               </div>
@@ -170,16 +193,14 @@
               <div class="dish-card__img-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1574484284002-952d92a04a4d?w=600&h=400&fit=crop&q=80"
-                  alt="Bœuf Bourguignon — slow-cooked Charolais beef in Pinot Noir with glazed root vegetables"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
+                  alt="Braised South African Abalone — 12-hour braised in oyster-mushroom master stock"
+                  class="dish-card__img" loading="lazy" />
               </div>
               <div class="dish-card__body">
-                <h4 class="dish-card__name">Bœuf Bourguignon</h4>
-                <p class="dish-card__desc">Slow-cooked Charolais beef in Pinot Noir, glazed carrots, and silky pomme purée</p>
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">紅燒鮑魚</span> Braised Abalone</h4>
+                <p class="dish-card__desc">Premium South African abalone, 12-hour braised in our rich oyster-mushroom master stock, resting on silky braised bok choy</p>
                 <div class="dish-card__footer">
-                  <span class="dish-card__price">S$68</span>
+                  <span class="dish-card__price">S$188</span>
                   <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
                 </div>
               </div>
@@ -189,16 +210,14 @@
               <div class="dish-card__img-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop&q=80"
-                  alt="Saumon en Croûte — Atlantic salmon in golden puff pastry with sauce béarnaise"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
+                  alt="Steamed Wild Grouper — whole live-catch grouper with aged soy and ginger"
+                  class="dish-card__img" loading="lazy" />
               </div>
               <div class="dish-card__body">
-                <h4 class="dish-card__name">Saumon en Croûte</h4>
-                <p class="dish-card__desc">Atlantic salmon encased in golden puff pastry with sauce béarnaise and haricots verts</p>
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">清蒸石斑魚</span> Steamed Grouper</h4>
+                <p class="dish-card__desc">Whole live-catch grouper steamed to order with aged soy, julienned ginger and scallion, finished tableside with a pour of sizzling fragrant oil</p>
                 <div class="dish-card__footer">
-                  <span class="dish-card__price">S$58</span>
+                  <span class="dish-card__price">S$98</span>
                   <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
                 </div>
               </div>
@@ -207,42 +226,21 @@
           </div>
         </div>
 
-        <!-- ── Desserts ── -->
+        <!-- 甜品 Desserts -->
         <div class="menu__category">
-          <h3 class="menu__category-title fade-in">Desserts</h3>
+          <h3 class="menu__category-title fade-in"><span lang="zh">甜品</span> · Desserts</h3>
           <div class="menu__grid">
 
             <article class="dish-card fade-in">
               <div class="dish-card__img-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&h=400&fit=crop&q=80"
-                  alt="Crème Brûlée — Madagascan vanilla custard with caramelised sugar crust"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
+                  alt="Mango Pomelo Sago — house-made mango pudding with pomelo and sago pearls"
+                  class="dish-card__img" loading="lazy" />
               </div>
               <div class="dish-card__body">
-                <h4 class="dish-card__name">Crème Brûlée</h4>
-                <p class="dish-card__desc">Madagascan vanilla custard beneath a glass-thin caramelised sugar crust</p>
-                <div class="dish-card__footer">
-                  <span class="dish-card__price">S$18</span>
-                  <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="dish-card fade-in">
-              <div class="dish-card__img-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&h=400&fit=crop&q=80"
-                  alt="Tarte Tatin — upside-down caramelised apple tart served warm with crème fraîche"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
-              </div>
-              <div class="dish-card__body">
-                <h4 class="dish-card__name">Tarte Tatin</h4>
-                <p class="dish-card__desc">Upside-down caramelised apple tart, served warm with a quenelle of crème fraîche</p>
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">芒果布甸</span> Mango Pomelo Sago</h4>
+                <p class="dish-card__desc">House-made mango pudding swirled with fresh pomelo, tapioca sago pearls, and a wisp of coconut cream — chilled to sublime perfection</p>
                 <div class="dish-card__footer">
                   <span class="dish-card__price">S$22</span>
                   <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
@@ -253,17 +251,32 @@
             <article class="dish-card fade-in">
               <div class="dish-card__img-wrap">
                 <img
-                  src="https://images.unsplash.com/photo-1541390702738-10f9e73e7cc2?w=600&h=400&fit=crop&q=80"
-                  alt="Mousse au Chocolat — Valrhona dark chocolate mousse with hazelnut praline"
-                  class="dish-card__img"
-                  loading="lazy"
-                />
+                  src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&h=400&fit=crop&q=80"
+                  alt="Cantonese Egg Tart — silky custard in crisp buttered pastry shell"
+                  class="dish-card__img" loading="lazy" />
               </div>
               <div class="dish-card__body">
-                <h4 class="dish-card__name">Mousse au Chocolat</h4>
-                <p class="dish-card__desc">Valrhona dark chocolate mousse, airy and intense, with hazelnut praline crumble</p>
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">蛋撻</span> Egg Tart</h4>
+                <p class="dish-card__desc">Silky vanilla custard set in a crisp, buttered puff-pastry shell — the Cantonese dim sum classic elevated to its finest expression</p>
                 <div class="dish-card__footer">
-                  <span class="dish-card__price">S$20</span>
+                  <span class="dish-card__price">S$16</span>
+                  <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="dish-card fade-in">
+              <div class="dish-card__img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1541390702738-10f9e73e7cc2?w=600&h=400&fit=crop&q=80"
+                  alt="Black Sesame Tang Yuan — glutinous rice balls in osmanthus ginger broth"
+                  class="dish-card__img" loading="lazy" />
+              </div>
+              <div class="dish-card__body">
+                <h4 class="dish-card__name"><span class="dish-card__cn" lang="zh">芝麻湯圓</span> Black Sesame Tang Yuan</h4>
+                <p class="dish-card__desc">Handcrafted glutinous rice balls filled with roasted black sesame paste, served floating in a warm osmanthus and ginger broth</p>
+                <div class="dish-card__footer">
+                  <span class="dish-card__price">S$18</span>
                   <span class="dish-card__dots" aria-hidden="true">✦ ✦ ✦</span>
                 </div>
               </div>
@@ -272,18 +285,17 @@
           </div>
         </div>
 
-      </div><!-- /container -->
+      </div>
     </section>
 
-    <!-- ══════════════════════════════════════
-         TESTIMONIALS
-    ══════════════════════════════════════ -->
+    <!-- TESTIMONIALS -->
     <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
       <div class="container">
 
         <div class="section__header fade-in">
-          <span class="section__label">Nos Invités</span>
+          <span class="section__label">賓客評語 · Guest Reviews</span>
           <h2 class="section__title" id="testimonials-heading">What Our Guests Say</h2>
+          <p class="section__chinese" aria-hidden="true">賓至如歸</p>
         </div>
 
         <div class="carousel fade-in" role="region" aria-label="Guest testimonials" aria-roledescription="carousel">
@@ -294,14 +306,14 @@
               <div class="testimonial-card">
                 <div class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</div>
                 <blockquote class="testimonial-card__quote">
-                  An evening that transported us straight to Paris. Every detail — from the amuse-bouche to the final
-                  mignardises — was a testament to true culinary artistry. We will return.
+                  An evening of absolute imperial splendour. The Peking Duck carved tableside was theatre and perfection combined.
+                  Golden Dragon Pavilion has set a new standard for Chinese fine dining in Singapore.
                 </blockquote>
                 <div class="testimonial-card__stars" aria-label="Five stars">
                   <span aria-hidden="true">★ ★ ★ ★ ★</span>
                 </div>
                 <cite class="testimonial-card__author">
-                  <strong>Sophie &amp; James T.</strong>
+                  <strong>Wei &amp; Mei Ling T.</strong>
                   <span>Anniversary Dinner</span>
                 </cite>
               </div>
@@ -311,15 +323,15 @@
               <div class="testimonial-card">
                 <div class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</div>
                 <blockquote class="testimonial-card__quote">
-                  Impeccable service, an extraordinary wine list curated with real knowledge, and a Bœuf Bourguignon
-                  I will be thinking about for years to come.
+                  The braised abalone was unlike anything I have tasted in Hong Kong, Shanghai, or Beijing.
+                  The service is imperially attentive without being intrusive. A true masterclass in hospitality.
                 </blockquote>
                 <div class="testimonial-card__stars" aria-label="Five stars">
                   <span aria-hidden="true">★ ★ ★ ★ ★</span>
                 </div>
                 <cite class="testimonial-card__author">
-                  <strong>Marcus L.</strong>
-                  <span>Business Dinner</span>
+                  <strong>James L.</strong>
+                  <span>Corporate Banquet</span>
                 </cite>
               </div>
             </div>
@@ -328,20 +340,20 @@
               <div class="testimonial-card">
                 <div class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</div>
                 <blockquote class="testimonial-card__quote">
-                  The finest crème brûlée I have ever tasted — and I have dined in Paris, Lyon, and Bordeaux.
-                  Maison Le Bleu is simply in a class of its own.
+                  The Xiao Long Bao tasted exactly as I remember from my grandmother's kitchen in Shanghai,
+                  but elevated to a realm she could only dream of. Simply extraordinary.
                 </blockquote>
                 <div class="testimonial-card__stars" aria-label="Five stars">
                   <span aria-hidden="true">★ ★ ★ ★ ★</span>
                 </div>
                 <cite class="testimonial-card__author">
-                  <strong>Nathalie R.</strong>
+                  <strong>Lily C.</strong>
                   <span>Birthday Celebration</span>
                 </cite>
               </div>
             </div>
 
-          </div><!-- /track -->
+          </div>
 
           <div class="carousel__controls">
             <button class="carousel__btn carousel__btn--prev" aria-label="Previous testimonial">&#8249;</button>
@@ -353,32 +365,30 @@
             <button class="carousel__btn carousel__btn--next" aria-label="Next testimonial">&#8250;</button>
           </div>
 
-        </div><!-- /carousel -->
+        </div>
 
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════
-         RESERVATIONS
-    ══════════════════════════════════════ -->
+    <!-- RESERVATIONS -->
     <section class="section reservations" id="reservations" aria-labelledby="reservations-heading">
       <div class="container">
 
         <div class="section__header fade-in">
-          <span class="section__label">Réservations</span>
+          <span class="section__label">訂座 · Reservations</span>
           <h2 class="section__title" id="reservations-heading">Reserve a Table</h2>
-          <p class="section__subtitle">We look forward to welcoming you. For parties of 8 or more, please call us directly.</p>
+          <p class="section__chinese" aria-hidden="true">恭候光臨</p>
+          <p class="section__subtitle">We look forward to welcoming you. For banquets and parties of 8 or more, please call us directly.</p>
         </div>
 
         <div class="reservations__layout fade-in">
 
-          <!-- Info column -->
           <div class="reservations__info">
             <div class="res-info">
               <h3 class="res-info__heading">Find Us</h3>
               <address class="res-info__address">
-                12 Rue de la Paix<br />
-                Marina Bay, Singapore 018989
+                8 Dragon Court, Level 38<br />
+                Marina Bay, Singapore 018956
               </address>
             </div>
             <div class="res-info">
@@ -386,101 +396,60 @@
               <dl class="res-info__hours">
                 <dt>Monday – Thursday</dt><dd>12:00 – 22:00</dd>
                 <dt>Friday – Saturday</dt><dd>12:00 – 23:00</dd>
-                <dt>Sunday</dt><dd>12:00 – 21:00</dd>
+                <dt>Sunday</dt><dd>11:00 – 21:00</dd>
               </dl>
             </div>
             <div class="res-info">
               <h3 class="res-info__heading">Contact</h3>
               <p><a href="tel:+6562345678" class="res-info__link">+65 6234 5678</a></p>
-              <p><a href="mailto:reservations@maisonlebleu.sg" class="res-info__link">reservations@maisonlebleu.sg</a></p>
+              <p><a href="mailto:reservations@goldendragonpavilion.sg" class="res-info__link">reservations@goldendragonpavilion.sg</a></p>
             </div>
           </div>
 
-          <!-- Form column -->
           <div class="reservations__form-wrap">
             <form class="res-form" id="reservationForm" novalidate>
 
               <div class="form-row form-row--half">
                 <div class="form-group">
-                  <label for="fullName" class="form-label">
-                    Full Name <span class="req-star" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="text" id="fullName" name="fullName"
-                    class="form-input" placeholder="Jean Dupont"
-                    required autocomplete="name"
-                    aria-describedby="fullName-error"
-                    aria-required="true"
-                  />
+                  <label for="fullName" class="form-label">Full Name <span class="req-star" aria-hidden="true">*</span></label>
+                  <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Lee Wei Ming"
+                    required autocomplete="name" aria-describedby="fullName-error" aria-required="true" />
                   <span class="form-error" id="fullName-error" role="alert" aria-live="polite"></span>
                 </div>
                 <div class="form-group">
-                  <label for="email" class="form-label">
-                    Email Address <span class="req-star" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="email" id="email" name="email"
-                    class="form-input" placeholder="jean@example.com"
-                    required autocomplete="email"
-                    aria-describedby="email-error"
-                    aria-required="true"
-                  />
+                  <label for="email" class="form-label">Email Address <span class="req-star" aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="wei@example.com"
+                    required autocomplete="email" aria-describedby="email-error" aria-required="true" />
                   <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
                 </div>
               </div>
 
               <div class="form-row form-row--half">
                 <div class="form-group">
-                  <label for="phone" class="form-label">
-                    Phone Number <span class="req-star" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="tel" id="phone" name="phone"
-                    class="form-input" placeholder="+65 9123 4567"
-                    required autocomplete="tel"
-                    aria-describedby="phone-error"
-                    aria-required="true"
-                  />
+                  <label for="phone" class="form-label">Phone Number <span class="req-star" aria-hidden="true">*</span></label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="+65 9123 4567"
+                    required autocomplete="tel" aria-describedby="phone-error" aria-required="true" />
                   <span class="form-error" id="phone-error" role="alert" aria-live="polite"></span>
                 </div>
                 <div class="form-group">
-                  <label for="guests" class="form-label">
-                    Guests <span class="req-star" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="number" id="guests" name="guests"
-                    class="form-input" placeholder="2"
-                    min="1" max="12" required
-                    aria-describedby="guests-error"
-                    aria-required="true"
-                  />
+                  <label for="guests" class="form-label">Guests <span class="req-star" aria-hidden="true">*</span></label>
+                  <input type="number" id="guests" name="guests" class="form-input" placeholder="2"
+                    min="1" max="12" required aria-describedby="guests-error" aria-required="true" />
                   <span class="form-error" id="guests-error" role="alert" aria-live="polite"></span>
                 </div>
               </div>
 
               <div class="form-row form-row--half">
                 <div class="form-group">
-                  <label for="date" class="form-label">
-                    Date <span class="req-star" aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="date" id="date" name="date"
-                    class="form-input" required
-                    aria-describedby="date-error"
-                    aria-required="true"
-                  />
+                  <label for="date" class="form-label">Date <span class="req-star" aria-hidden="true">*</span></label>
+                  <input type="date" id="date" name="date" class="form-input" required
+                    aria-describedby="date-error" aria-required="true" />
                   <span class="form-error" id="date-error" role="alert" aria-live="polite"></span>
                 </div>
                 <div class="form-group">
-                  <label for="time" class="form-label">
-                    Time <span class="req-star" aria-hidden="true">*</span>
-                  </label>
-                  <select
-                    id="time" name="time"
-                    class="form-input form-select" required
-                    aria-describedby="time-error"
-                    aria-required="true"
-                  >
+                  <label for="time" class="form-label">Time <span class="req-star" aria-hidden="true">*</span></label>
+                  <select id="time" name="time" class="form-input form-select" required
+                    aria-describedby="time-error" aria-required="true">
                     <option value="">Select a time</option>
                     <option value="12:00">12:00</option>
                     <option value="12:30">12:30</option>
@@ -506,51 +475,43 @@
                 <label for="requests" class="form-label">
                   Special Requests <span class="form-optional">(optional)</span>
                 </label>
-                <textarea
-                  id="requests" name="requests"
-                  class="form-input form-textarea"
-                  placeholder="Dietary requirements, celebrations, seating preferences…"
-                  rows="4"
-                ></textarea>
+                <textarea id="requests" name="requests" class="form-input form-textarea"
+                  placeholder="Dietary requirements, celebrations, private room, Halal requirements…" rows="4"></textarea>
               </div>
 
-              <button type="submit" class="btn btn--gold btn--full">Send Reservation Request</button>
+              <button type="submit" class="btn btn--gold btn--full">Send Reservation Request · 提交訂座</button>
 
             </form>
 
-            <!-- Confirmation (hidden until successful submit) -->
             <div class="confirmation" id="confirmation" aria-live="polite" hidden>
               <div class="confirmation__icon" aria-hidden="true">✦</div>
-              <h3 class="confirmation__title">Reservation Received</h3>
+              <h3 class="confirmation__title">Reservation Received · 訂座確認</h3>
               <p class="confirmation__message" id="confirmationMessage"></p>
               <button class="btn btn--outline-sm" id="resetForm">Make Another Reservation</button>
             </div>
 
-          </div><!-- /form-wrap -->
-        </div><!-- /layout -->
-      </div><!-- /container -->
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
 
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
 
         <div class="footer__brand">
-          <span class="footer__logo">Maison Le Bleu</span>
-          <p class="footer__tagline">Authentic French cuisine<br />in the heart of the city</p>
+          <span class="footer__logo"><span class="footer__logo-cn">金龍閣</span>Golden Dragon Pavilion</span>
+          <p class="footer__tagline">Imperial Chinese Fine Dining<br />Marina Bay, Singapore</p>
         </div>
 
         <div class="footer__col">
           <h4 class="footer__heading">Visit Us</h4>
           <address class="footer__address">
-            12 Rue de la Paix<br />
+            8 Dragon Court, Level 38<br />
             Marina Bay<br />
-            Singapore 018989
+            Singapore 018956
           </address>
           <p class="footer__phone"><a href="tel:+6562345678">+65 6234 5678</a></p>
         </div>
@@ -560,23 +521,23 @@
           <dl class="footer__hours">
             <dt>Mon – Thu</dt><dd>12:00 – 22:00</dd>
             <dt>Fri – Sat</dt><dd>12:00 – 23:00</dd>
-            <dt>Sunday</dt><dd>12:00 – 21:00</dd>
+            <dt>Sunday</dt><dd>11:00 – 21:00</dd>
           </dl>
         </div>
 
         <div class="footer__col">
           <h4 class="footer__heading">Connect</h4>
           <ul class="footer__social" role="list">
-            <li><a href="#" class="footer__social-link" aria-label="Maison Le Bleu on Instagram">Instagram</a></li>
-            <li><a href="#" class="footer__social-link" aria-label="Maison Le Bleu on Facebook">Facebook</a></li>
-            <li><a href="mailto:reservations@maisonlebleu.sg" class="footer__social-link">Email Us</a></li>
+            <li><a href="#" class="footer__social-link" aria-label="Golden Dragon Pavilion on Instagram">Instagram</a></li>
+            <li><a href="#" class="footer__social-link" aria-label="Golden Dragon Pavilion on Facebook">Facebook</a></li>
+            <li><a href="mailto:reservations@goldendragonpavilion.sg" class="footer__social-link">Email Us</a></li>
           </ul>
         </div>
 
-      </div><!-- /grid -->
+      </div>
 
       <div class="footer__bottom">
-        <p>&copy; 2026 Maison Le Bleu. All rights reserved.</p>
+        <p>&copy; 2026 金龍閣 Golden Dragon Pavilion. All rights reserved.</p>
       </div>
     </div>
   </footer>

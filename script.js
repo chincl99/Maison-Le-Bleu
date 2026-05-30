@@ -331,7 +331,7 @@
     confirmationMsg.textContent =
       'Thank you, ' + nameVal + '! Your reservation request for ' +
       guestsNum + ' ' + guestWord + ' on ' + dateDisplay + ' at ' + timeVal +
-      ' has been received. We look forward to welcoming you to Maison Le Bleu.';
+      ' has been received. We look forward to welcoming you to Golden Dragon Pavilion · 金龍閣.';
 
     // Swap form for confirmation
     form.hidden = true;
