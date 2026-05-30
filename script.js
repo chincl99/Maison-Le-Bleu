@@ -419,6 +419,111 @@
     setTimeout(function () { container.innerHTML = ''; }, 28 * 120 + 6500);
   }
 
+  /* ────────────────────────────────────────
+     FAQ Modal
+  ──────────────────────────────────────── */
+  var FAQ_DATA = [
+    {
+      section: 'Reservations',
+      items: [
+        { q: 'How do I make a reservation?', a: 'Use the online reservation form in the Reservations section of this page. Fill in your name, email, phone, date, time, and party size, then submit. A confirmation will appear on-screen and by email.' },
+        { q: 'How far in advance should I book?', a: 'We recommend at least 3–5 days ahead for weekdays and 1–2 weeks for weekend evenings and public holidays. For private dining or groups of 10+, please contact us at least 3 weeks in advance.' },
+        { q: 'Can I make a same-day reservation?', a: 'Same-day reservations are subject to availability. Please call us directly at +65 6234 5678 to check for last-minute openings.' },
+        { q: 'Can I modify or cancel my reservation?', a: 'Email reservations@goldendragonpavilion.sg or call +65 6234 5678 at least 24 hours before your dining time. Cancellations with less than 24 hours\' notice may incur a fee.' }
+      ]
+    },
+    {
+      section: 'Dining Experience',
+      items: [
+        { q: 'What type of cuisine do you serve?', a: 'We serve imperial Chinese fine dining inspired by the royal kitchens of the Qing Dynasty — refined Cantonese and Shandong preparations alongside seasonal tasting menus.' },
+        { q: 'Do you offer a tasting menu?', a: 'Yes. Our eight-course Imperial Tasting Menu is available at dinner service. A vegetarian variant is available with advance notice — please indicate when booking.' },
+        { q: 'Can you accommodate dietary restrictions and allergies?', a: 'Yes. We cater to vegetarian, vegan, gluten-free, nut-free, shellfish-free, and halal-friendly requirements. Note any needs in the Special Requests field when booking.' },
+        { q: 'Is there a dress code?', a: 'Smart casual or above is required. Shorts, flip-flops, and athletic wear are not permitted. Formal attire is encouraged for private dining and special occasions.' }
+      ]
+    },
+    {
+      section: 'Opening Hours & Location',
+      items: [
+        { q: 'What are your opening hours?', a: 'Monday–Thursday 12:00–22:00, Friday–Saturday 12:00–23:00, Sunday 11:00–21:00. Hours may vary on public holidays — please call ahead.' },
+        { q: 'Where are you located?', a: '8 Dragon Court, Level 38, Marina Bay, Singapore 018956. A short walk from Bayfront MRT.' },
+        { q: 'Is parking available?', a: 'Valet parking is available from 18:00 on weekdays and from 12:00 on weekends. Public carparks are also available nearby.' }
+      ]
+    },
+    {
+      section: 'Private Dining & Events',
+      items: [
+        { q: 'Do you have private dining rooms?', a: 'Yes. We have three rooms: the Jade Chamber (8–12 pax), Phoenix Hall (12–20 pax), and Imperial Banquet Suite (20–60 pax), each with dedicated service staff.' },
+        { q: 'Can you host corporate events and celebrations?', a: 'Absolutely. Our events team tailors full-service packages including bespoke menus, floral arrangements, AV support, and personalised keepsakes. Email banquets@goldendragonpavilion.sg.' }
+      ]
+    },
+    {
+      section: 'Payments & Vouchers',
+      items: [
+        { q: 'What payment methods do you accept?', a: 'We accept Visa, Mastercard, American Express, PayNow, and cash. A 10% service charge and prevailing GST are added to all bills.' },
+        { q: 'Do you offer gift vouchers?', a: 'Yes. Gift vouchers in S$50, S$100, S$200, and S$500 denominations are available at the restaurant or by emailing info@goldendragonpavilion.sg.' }
+      ]
+    }
+  ];
+
+  var faqFab     = document.getElementById('faqFab');
+  var faqModal   = document.getElementById('faqModal');
+  var faqClose   = document.getElementById('faqClose');
+  var faqBackdrop = document.getElementById('faqBackdrop');
+  var faqBody    = document.getElementById('faqBody');
+
+  if (faqFab && faqModal && faqBody) {
+    // Build FAQ HTML once
+    var faqHtml = '';
+    FAQ_DATA.forEach(function (section) {
+      faqHtml += '<h3 class="faq-section-title">' + section.section + '</h3>';
+      section.items.forEach(function (item, idx) {
+        var id = 'faq-ans-' + section.section.replace(/\s+/g, '-').toLowerCase() + '-' + idx;
+        faqHtml +=
+          '<div class="faq-item">' +
+            '<button class="faq-item__question" aria-expanded="false" aria-controls="' + id + '">' +
+              item.q +
+              '<svg class="faq-item__chevron" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,4 6,8 10,4"/></svg>' +
+            '</button>' +
+            '<div class="faq-item__answer" id="' + id + '" role="region">' + item.a + '</div>' +
+          '</div>';
+      });
+    });
+    faqBody.innerHTML = faqHtml;
+
+    // Accordion toggle
+    faqBody.addEventListener('click', function (e) {
+      var btn = e.target.closest('.faq-item__question');
+      if (!btn) return;
+      var answerId = btn.getAttribute('aria-controls');
+      var answer = document.getElementById(answerId);
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      answer.classList.toggle('open', !isOpen);
+    });
+
+    function openFaq() {
+      faqModal.hidden = false;
+      faqFab.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      faqClose.focus();
+    }
+
+    function closeFaq() {
+      faqModal.hidden = true;
+      faqFab.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      faqFab.focus();
+    }
+
+    faqFab.addEventListener('click', openFaq);
+    faqClose.addEventListener('click', closeFaq);
+    if (faqBackdrop) faqBackdrop.addEventListener('click', closeFaq);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !faqModal.hidden) closeFaq();
+    });
+  }
+
   /* ── "Make another reservation" resets everything ── */
   if (resetBtn) {
     resetBtn.addEventListener('click', function () {
