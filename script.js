@@ -460,7 +460,13 @@
       section: 'Payments & Vouchers',
       items: [
         { q: 'What payment methods do you accept?', a: 'We accept Visa, Mastercard, American Express, PayNow, and cash. A 10% service charge and prevailing GST are added to all bills.' },
-        { q: 'Do you offer gift vouchers?', a: 'Yes. Gift vouchers in S$50, S$100, S$200, and S$500 denominations are available at the restaurant or by emailing info@goldendragonpavilion.sg.' }
+        { q: 'Do you offer gift vouchers?', a: 'Yes. Gift vouchers in S$50, S$100, S$200, and S$500 denominations are available at the restaurant or by emailing reservations@goldendragonpavilion.sg.' }
+      ]
+    },
+    {
+      section: 'Contact',
+      items: [
+        { q: 'How can I contact Golden Dragon Pavilion?', a: 'Phone: +65 6234 5678 (daily 10 am–10 pm) · Email: reservations@goldendragonpavilion.sg · WhatsApp: +65 9125 6169 · Address: 8 Dragon Court, Level 38, Marina Bay, Singapore 018956.' }
       ]
     }
   ];
