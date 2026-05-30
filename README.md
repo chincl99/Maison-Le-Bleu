@@ -12,6 +12,8 @@ A single-page restaurant website for **金龍閣 Golden Dragon Pavilion**, an im
 - Signature dishes menu with image cards
 - Customer testimonials carousel with auto-advance and manual controls
 - Online reservation form with client-side validation and confirmation state
+- Voice announcement on successful booking: "Hurray! Thank you for your submission. We will get back to you in one business day." (Web Speech API)
+- Balloon drop celebration — 28 coloured balloons rise with swaying animation on form success
 - Light / dark theme toggle with OS preference detection and `localStorage` persistence
 - WhatsApp Business floating-action button (bottom-right) linking to +65 9125 6169
 - Fully responsive design — mobile, tablet, desktop (hamburger nav at 768 px)
