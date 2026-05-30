@@ -71,6 +71,33 @@
   });
 
   /* ────────────────────────────────────────
+     Theme toggle: light / dark
+  ──────────────────────────────────────── */
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+
+  function applyTheme(theme) {
+    htmlEl.setAttribute('data-theme', theme);
+    const isLight = theme === 'light';
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+    }
+  }
+
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(savedTheme !== null ? savedTheme : (prefersDark ? 'dark' : 'light'));
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var next = htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
+  /* ────────────────────────────────────────
      Smooth scroll (fallback for older Safari)
   ──────────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
