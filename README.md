@@ -1,6 +1,6 @@
-# Maison Le Bleu
+# 金龍閣 · Golden Dragon Pavilion
 
-A single-page restaurant booking website for **Maison Le Bleu**, a fictional French fine-dining restaurant.
+A single-page restaurant website for **金龍閣 Golden Dragon Pavilion**, an imperial Chinese fine-dining restaurant in Singapore. No build tools, no frameworks — open `index.html` directly in any browser.
 
 ## Live Site
 
@@ -8,32 +8,55 @@ A single-page restaurant booking website for **Maison Le Bleu**, a fictional Fre
 
 ## Features
 
-- Elegant hero section with Ken-Burns animation
-- Interactive menu showcase
-- Customer testimonials carousel
-- Online reservation form with validation
-- Fully responsive design (mobile, tablet, desktop)
+- Hero section with Ken-Burns animation and decorative SVG lanterns
+- Signature dishes menu with image cards
+- Customer testimonials carousel with auto-advance and manual controls
+- Online reservation form with client-side validation and confirmation state
+- Light / dark theme toggle with OS preference detection and `localStorage` persistence
+- WhatsApp Business floating-action button (bottom-right) linking to +65 9125 6169
+- Fully responsive design — mobile, tablet, desktop (hamburger nav at 768 px)
+- Accessible: skip link, ARIA labels, `aria-live` regions, focus-visible outlines
 
 ## Tech Stack
 
-- Plain HTML, CSS, JavaScript — no frameworks or build tools
-- Google Fonts: Cormorant Garamond & Montserrat
-- Unsplash images
+- Plain HTML, CSS, vanilla JavaScript — no frameworks or build tools
+- Google Fonts: Noto Serif SC, Cormorant Garamond, Raleway
+- Unsplash images (direct CDN URLs, no API key needed)
 
 ## Running Locally
 
-Just open `index.html` in any browser — no server or install needed.
+```
+# Windows — open in default browser
+start index.html
+
+# Or drag index.html into any browser window
+```
+
+No server, package manager, or install step required.
 
 ## Project Structure
 
 ```
-├── index.html      # All markup
-├── styles.css      # All styles (CSS variables, responsive breakpoints)
-└── script.js       # Nav, carousel, form validation
+├── index.html      # All markup — nav, hero, menu, testimonials, reservations, footer
+├── styles.css      # All styles — CSS variables, BEM classes, responsive breakpoints
+└── script.js       # Single IIFE — nav scroll, hamburger, theme toggle, carousel, form validation
+```
+
+### Custom agents & skills
+
+```
+├── .claude/agents/whatsapp-chatbot-widget.md   # Agent: manage the WhatsApp FAB
+└── .agents/skills/theme-toggle/SKILL.md        # Skill: add/update the light-dark toggle
 ```
 
 ## Customisation
 
-- **Colours** — all colours are CSS custom properties in `styles.css` under `:root`. Change `--clr-gold: #c8a96e` and the other variables to retheme the entire site.
-- **Images** — all photos are Unsplash direct URLs with query params (e.g. `?w=600&h=400&fit=crop&q=80`). Swap the photo ID segment in the URL to change any image.
-- **Content** — edit text directly in `index.html`. Section IDs (`#menu`, `#reservations`, etc.) are used by nav links and the hero CTA, so keep them if you rename sections.
+**Colours** — all colours are CSS custom properties on `:root` in `styles.css`. The dark palette uses `--clr-ink`, `--clr-gold: #C4993A`, `--clr-rouge`, etc. A `html[data-theme="light"]` block provides the warm rice-paper palette. Edit only the variables block to retheme the entire site.
+
+**Theme toggle** — the toggle reads `localStorage('theme')`, falls back to `prefers-color-scheme`. To change the default, edit the inline `<script>` in `<head>` of `index.html`.
+
+**WhatsApp number** — change the digits after `wa.me/` in the `<a class="wa-fab">` href in `index.html`. The agent at `.claude/agents/whatsapp-chatbot-widget.md` can do this for you automatically.
+
+**Images** — all photos are Unsplash direct URLs with query params (e.g. `?w=600&h=400&fit=crop&q=80`). Swap the photo ID segment in the URL to change any image.
+
+**Content** — edit text directly in `index.html`. Section IDs (`#menu`, `#testimonials`, `#reservations`) are used by nav links and the hero CTA — keep them if you rename sections.
