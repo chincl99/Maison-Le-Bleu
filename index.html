@@ -568,41 +568,61 @@
     </div>
   </footer>
 
-  <!-- FAQ FAB -->
+  <!-- Chatbot FAB -->
   <button
-    class="faq-fab"
-    id="faqFab"
-    aria-label="Frequently asked questions"
+    class="chat-fab"
+    id="chatFab"
+    aria-label="Open chat assistant"
     aria-expanded="false"
-    aria-controls="faqModal"
+    aria-controls="chatPanel"
   >
-    <svg class="faq-fab__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="10"/>
-      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    <svg class="chat-fab__icon chat-fab__icon--open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
     </svg>
-    <span class="faq-fab__tooltip">FAQ</span>
+    <svg class="chat-fab__icon chat-fab__icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+    <span class="chat-fab__tooltip">Chat with us</span>
   </button>
 
-  <!-- FAQ Modal -->
-  <div class="faq-modal" id="faqModal" role="dialog" aria-modal="true" aria-labelledby="faqModalTitle" hidden>
-    <div class="faq-modal__backdrop" id="faqBackdrop"></div>
-    <div class="faq-modal__panel">
-      <div class="faq-modal__header">
-        <h2 class="faq-modal__title" id="faqModalTitle">
-          <span class="faq-modal__title-cn" lang="zh">常見問題</span>
-          Frequently Asked Questions
-        </h2>
-        <button class="faq-modal__close" id="faqClose" aria-label="Close FAQ">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
+  <!-- Chatbot Panel -->
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-modal="true" aria-labelledby="chatPanelTitle" hidden>
+    <div class="chat-panel__header">
+      <div class="chat-panel__avatar" aria-hidden="true">ML</div>
+      <div class="chat-panel__info">
+        <h2 class="chat-panel__title" id="chatPanelTitle">Maison Le Bleu</h2>
+        <span class="chat-panel__status">
+          <span class="chat-panel__dot" aria-hidden="true"></span>
+          Assistant online
+        </span>
       </div>
-      <div class="faq-modal__body" id="faqBody">
-        <!-- injected by script.js -->
-      </div>
+      <button class="chat-panel__close" id="chatClose" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
     </div>
+    <div class="chat-panel__messages" id="chatMessages" aria-live="polite" aria-atomic="false">
+      <!-- messages injected by script.js -->
+    </div>
+    <div class="chat-panel__suggestions" id="chatSuggestions" aria-label="Quick questions">
+      <!-- suggestions injected by script.js -->
+    </div>
+    <form class="chat-panel__form" id="chatForm" autocomplete="off">
+      <input
+        class="chat-panel__input"
+        id="chatInput"
+        type="text"
+        placeholder="Ask a question…"
+        aria-label="Your message"
+        maxlength="200"
+      />
+      <button class="chat-panel__send" type="submit" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </form>
   </div>
 
   <!-- WhatsApp Business FAB -->

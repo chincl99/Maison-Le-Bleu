@@ -420,113 +420,196 @@
   }
 
   /* ────────────────────────────────────────
-     FAQ Modal
+     Chatbot
   ──────────────────────────────────────── */
-  var FAQ_DATA = [
+  var CHAT_KB = [
     {
-      section: 'Reservations',
-      items: [
-        { q: 'How do I make a reservation?', a: 'Use the online reservation form in the Reservations section of this page. Fill in your name, email, phone, date, time, and party size, then submit. A confirmation will appear on-screen and by email.' },
-        { q: 'How far in advance should I book?', a: 'We recommend at least 3–5 days ahead for weekdays and 1–2 weeks for weekend evenings and public holidays. For private dining or groups of 10+, please contact us at least 3 weeks in advance.' },
-        { q: 'Can I make a same-day reservation?', a: 'Same-day reservations are subject to availability. Please call us directly at +65 6234 5678 to check for last-minute openings.' },
-        { q: 'Can I modify or cancel my reservation?', a: 'Email reservations@goldendragonpavilion.sg or call +65 6234 5678 at least 24 hours before your dining time. Cancellations with less than 24 hours\' notice may incur a fee.' }
-      ]
+      keys: ['reserv', 'book', 'table', 'how do i'],
+      a: 'You can book a table using the <a href="#reservations" style="color:var(--clr-gold)">Reservations form</a> on this page. Fill in your name, email, phone, date, time, and party size, then submit.'
     },
     {
-      section: 'Dining Experience',
-      items: [
-        { q: 'What type of cuisine do you serve?', a: 'We serve imperial Chinese fine dining inspired by the royal kitchens of the Qing Dynasty — refined Cantonese and Shandong preparations alongside seasonal tasting menus.' },
-        { q: 'Do you offer a tasting menu?', a: 'Yes. Our eight-course Imperial Tasting Menu is available at dinner service. A vegetarian variant is available with advance notice — please indicate when booking.' },
-        { q: 'Can you accommodate dietary restrictions and allergies?', a: 'Yes. We cater to vegetarian, vegan, gluten-free, nut-free, shellfish-free, and halal-friendly requirements. Note any needs in the Special Requests field when booking.' },
-        { q: 'Is there a dress code?', a: 'Smart casual or above is required. Shorts, flip-flops, and athletic wear are not permitted. Formal attire is encouraged for private dining and special occasions.' }
-      ]
+      keys: ['advance', 'far ahead', 'when', 'early'],
+      a: 'We recommend booking 3–5 days ahead for weekdays and 1–2 weeks for weekend evenings. Groups of 10+ should book at least 3 weeks in advance.'
     },
     {
-      section: 'Opening Hours & Location',
-      items: [
-        { q: 'What are your opening hours?', a: 'Monday–Thursday 12:00–22:00, Friday–Saturday 12:00–23:00, Sunday 11:00–21:00. Hours may vary on public holidays — please call ahead.' },
-        { q: 'Where are you located?', a: '8 Dragon Court, Level 38, Marina Bay, Singapore 018956. A short walk from Bayfront MRT.' },
-        { q: 'Is parking available?', a: 'Valet parking is available from 18:00 on weekdays and from 12:00 on weekends. Public carparks are also available nearby.' }
-      ]
+      keys: ['same day', 'last.?minute', 'today', 'tonight'],
+      a: 'Same-day reservations are subject to availability. Please call us directly at <strong>+33 1 4455 8800</strong> to check for last-minute openings.'
     },
     {
-      section: 'Private Dining & Events',
-      items: [
-        { q: 'Do you have private dining rooms?', a: 'Yes. We have three rooms: the Jade Chamber (8–12 pax), Phoenix Hall (12–20 pax), and Imperial Banquet Suite (20–60 pax), each with dedicated service staff.' },
-        { q: 'Can you host corporate events and celebrations?', a: 'Absolutely. Our events team tailors full-service packages including bespoke menus, floral arrangements, AV support, and personalised keepsakes. Email banquets@goldendragonpavilion.sg.' }
-      ]
+      keys: ['cancel', 'modif', 'change.*reserv', 'reschedul'],
+      a: 'Email <strong>reservations@maisonlebleu.fr</strong> or call <strong>+33 1 4455 8800</strong> at least 24 hours before your dining time.'
     },
     {
-      section: 'Payments & Vouchers',
-      items: [
-        { q: 'What payment methods do you accept?', a: 'We accept Visa, Mastercard, American Express, PayNow, and cash. A 10% service charge and prevailing GST are added to all bills.' },
-        { q: 'Do you offer gift vouchers?', a: 'Yes. Gift vouchers in S$50, S$100, S$200, and S$500 denominations are available at the restaurant or by emailing reservations@goldendragonpavilion.sg.' }
-      ]
+      keys: ['cuisine', 'food', 'serve', 'menu.*type', 'what.*cook'],
+      a: 'Maison Le Bleu serves contemporary French fine dining — classical techniques with modern sensibility, celebrating seasonal produce and regional terroir.'
     },
     {
-      section: 'Contact',
-      items: [
-        { q: 'How can I contact Golden Dragon Pavilion?', a: 'Phone: +65 6234 5678 (daily 10 am–10 pm) · Email: reservations@goldendragonpavilion.sg · WhatsApp: +65 9125 6169 · Address: 8 Dragon Court, Level 38, Marina Bay, Singapore 018956.' }
-      ]
+      keys: ['tasting menu', 'degustation', 'course'],
+      a: 'Yes. Our seven-course Tasting Menu is available at dinner service. A vegetarian variant is available with advance notice — please indicate when booking.'
+    },
+    {
+      keys: ['diet', 'allerg', 'vegan', 'vegetarian', 'gluten', 'halal', 'nut.?free'],
+      a: 'We accommodate vegetarian, vegan, gluten-free, nut-free, and shellfish-free requirements. Please note any dietary needs in the Special Requests field when booking.'
+    },
+    {
+      keys: ['dress', 'attire', 'wear', 'smart casual', 'formal'],
+      a: 'Smart casual or above is required. Shorts, flip-flops, and athletic wear are not permitted. Formal attire is encouraged for private dining.'
+    },
+    {
+      keys: ['hour', 'open', 'close', 'time.*open', 'when.*open'],
+      a: 'We are open Monday–Thursday 12:00–22:00, Friday–Saturday 12:00–23:00, Sunday 11:00–21:00. Hours may vary on public holidays — please call ahead.'
+    },
+    {
+      keys: ['locat', 'address', 'where', 'find you', 'direction'],
+      a: 'We are located at <strong>12 Rue des Étoiles, 75008 Paris, France</strong>. Nearest Métro: Saint-Philippe-du-Roule (Line 9).'
+    },
+    {
+      keys: ['park'],
+      a: 'Valet parking is available from 18:00 on weekdays and from 12:00 on weekends. Public car parks are also available nearby.'
+    },
+    {
+      keys: ['private', 'private dining', 'private room', 'room'],
+      a: 'We have three private dining rooms: the Salon Bleu (8–12 guests), the Salle d\'Or (12–20 guests), and the Grand Salon (20–60 guests), each with dedicated service staff.'
+    },
+    {
+      keys: ['event', 'corporate', 'celebrat', 'wedding', 'party'],
+      a: 'Our events team tailors full-service packages including bespoke menus, floral arrangements, AV support, and personalised keepsakes. Email <strong>events@maisonlebleu.fr</strong>.'
+    },
+    {
+      keys: ['pay', 'payment', 'card', 'credit', 'cash', 'accept'],
+      a: 'We accept Visa, Mastercard, American Express, and cash. A 15% service charge is added to all bills.'
+    },
+    {
+      keys: ['voucher', 'gift', 'gift card'],
+      a: 'Gift vouchers in €50, €100, €200, and €500 denominations are available at the restaurant or by emailing <strong>reservations@maisonlebleu.fr</strong>.'
+    },
+    {
+      keys: ['contact', 'phone', 'call', 'email', 'reach', 'whatsapp'],
+      a: 'Phone: <strong>+33 1 4455 8800</strong> (daily 10 am–10 pm) · Email: <strong>reservations@maisonlebleu.fr</strong> · Address: 12 Rue des Étoiles, 75008 Paris.'
     }
   ];
 
-  var faqFab     = document.getElementById('faqFab');
-  var faqModal   = document.getElementById('faqModal');
-  var faqClose   = document.getElementById('faqClose');
-  var faqBackdrop = document.getElementById('faqBackdrop');
-  var faqBody    = document.getElementById('faqBody');
+  var SUGGESTIONS = [
+    'Make a reservation',
+    'Opening hours',
+    'Our menu',
+    'Contact us',
+    'Private dining'
+  ];
 
-  if (faqFab && faqModal && faqBody) {
-    // Build FAQ HTML once
-    var faqHtml = '';
-    FAQ_DATA.forEach(function (section) {
-      faqHtml += '<h3 class="faq-section-title">' + section.section + '</h3>';
-      section.items.forEach(function (item, idx) {
-        var id = 'faq-ans-' + section.section.replace(/\s+/g, '-').toLowerCase() + '-' + idx;
-        faqHtml +=
-          '<div class="faq-item">' +
-            '<button class="faq-item__question" aria-expanded="false" aria-controls="' + id + '">' +
-              item.q +
-              '<svg class="faq-item__chevron" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2,4 6,8 10,4"/></svg>' +
-            '</button>' +
-            '<div class="faq-item__answer" id="' + id + '" role="region">' + item.a + '</div>' +
-          '</div>';
+  var chatFab        = document.getElementById('chatFab');
+  var chatPanel      = document.getElementById('chatPanel');
+  var chatClose      = document.getElementById('chatClose');
+  var chatMessages   = document.getElementById('chatMessages');
+  var chatSuggestions = document.getElementById('chatSuggestions');
+  var chatForm       = document.getElementById('chatForm');
+  var chatInput      = document.getElementById('chatInput');
+  var chatOpen       = false;
+
+  function chatEscape(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function addMsg(text, role) {
+    var el = document.createElement('div');
+    el.className = 'chat-msg chat-msg--' + role;
+    if (role === 'bot') {
+      el.innerHTML = text;
+    } else {
+      el.textContent = text;
+    }
+    chatMessages.appendChild(el);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return el;
+  }
+
+  function showTyping() {
+    var el = document.createElement('div');
+    el.className = 'chat-msg chat-msg--bot chat-msg--typing';
+    el.innerHTML = '<span></span><span></span><span></span>';
+    chatMessages.appendChild(el);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return el;
+  }
+
+  function findAnswer(query) {
+    var q = query.toLowerCase();
+    for (var i = 0; i < CHAT_KB.length; i++) {
+      var entry = CHAT_KB[i];
+      for (var j = 0; j < entry.keys.length; j++) {
+        if (new RegExp(entry.keys[j]).test(q)) return entry.a;
+      }
+    }
+    return null;
+  }
+
+  function botReply(query) {
+    var typing = showTyping();
+    setTimeout(function () {
+      typing.remove();
+      var ans = findAnswer(query);
+      if (ans) {
+        addMsg(ans, 'bot');
+      } else {
+        addMsg('I\'m not sure about that — for the quickest help, please call us at <strong>+33 1 4455 8800</strong> or email <strong>reservations@maisonlebleu.fr</strong>.', 'bot');
+      }
+    }, 750);
+  }
+
+  function renderSuggestions() {
+    chatSuggestions.innerHTML = '';
+    SUGGESTIONS.forEach(function (s) {
+      var btn = document.createElement('button');
+      btn.className = 'chat-suggestion';
+      btn.type = 'button';
+      btn.textContent = s;
+      btn.addEventListener('click', function () {
+        handleUserMessage(s);
       });
+      chatSuggestions.appendChild(btn);
     });
-    faqBody.innerHTML = faqHtml;
+  }
 
-    // Accordion toggle
-    faqBody.addEventListener('click', function (e) {
-      var btn = e.target.closest('.faq-item__question');
-      if (!btn) return;
-      var answerId = btn.getAttribute('aria-controls');
-      var answer = document.getElementById(answerId);
-      var isOpen = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      answer.classList.toggle('open', !isOpen);
+  function handleUserMessage(text) {
+    text = text.trim();
+    if (!text) return;
+    chatSuggestions.innerHTML = '';
+    addMsg(text, 'user');
+    chatInput.value = '';
+    botReply(text);
+  }
+
+  function openChat() {
+    chatPanel.hidden = false;
+    chatOpen = true;
+    chatFab.setAttribute('aria-expanded', 'true');
+    if (!chatMessages.firstChild) {
+      addMsg('Bonjour! I\'m the Maison Le Bleu assistant. How can I help you today?', 'bot');
+      renderSuggestions();
+    }
+    setTimeout(function () { chatInput.focus(); }, 50);
+  }
+
+  function closeChat() {
+    chatPanel.hidden = true;
+    chatOpen = false;
+    chatFab.setAttribute('aria-expanded', 'false');
+    chatFab.focus();
+  }
+
+  if (chatFab && chatPanel) {
+    chatFab.addEventListener('click', function () {
+      chatOpen ? closeChat() : openChat();
     });
+    chatClose.addEventListener('click', closeChat);
 
-    function openFaq() {
-      faqModal.hidden = false;
-      faqFab.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-      faqClose.focus();
-    }
-
-    function closeFaq() {
-      faqModal.hidden = true;
-      faqFab.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-      faqFab.focus();
-    }
-
-    faqFab.addEventListener('click', openFaq);
-    faqClose.addEventListener('click', closeFaq);
-    if (faqBackdrop) faqBackdrop.addEventListener('click', closeFaq);
+    chatForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      handleUserMessage(chatInput.value);
+    });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !faqModal.hidden) closeFaq();
+      if (e.key === 'Escape' && chatOpen) closeChat();
     });
   }
 
