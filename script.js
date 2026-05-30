@@ -367,7 +367,57 @@
     // Move focus into the confirmation for screen readers
     confirmationEl.setAttribute('tabindex', '-1');
     confirmationEl.focus({ preventScroll: true });
+
+    // Voice announcement
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      var utterance = new SpeechSynthesisUtterance(
+        'Hurray! Thank you for your submission. We will get back to you in one business day.'
+      );
+      utterance.rate = 0.95;
+      utterance.pitch = 1.1;
+      utterance.volume = 1;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Balloon drop
+    launchBalloons();
   });
+
+  var BALLOON_COLOURS = [
+    '#e63946', '#f4a261', '#2a9d8f', '#e9c46a',
+    '#a8dadc', '#c77dff', '#ff6b9d', '#06d6a0'
+  ];
+
+  function launchBalloons() {
+    var container = document.getElementById('balloon-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'balloon-container';
+      document.body.appendChild(container);
+    }
+    container.innerHTML = '';
+
+    for (var i = 0; i < 28; i++) {
+      (function (idx) {
+        setTimeout(function () {
+          var b = document.createElement('div');
+          b.className = 'balloon';
+          var colour = BALLOON_COLOURS[idx % BALLOON_COLOURS.length];
+          b.style.background = colour;
+          b.style.left = (Math.random() * 96 + 2) + '%';
+          var dur = (3.5 + Math.random() * 2.5).toFixed(2) + 's';
+          b.style.setProperty('--duration', dur);
+          container.appendChild(b);
+          // Remove after animation ends to keep DOM clean
+          b.addEventListener('animationend', function () { b.remove(); });
+        }, idx * 120);
+      })(i);
+    }
+
+    // Remove container once all balloons are gone
+    setTimeout(function () { container.innerHTML = ''; }, 28 * 120 + 6500);
+  }
 
   /* ── "Make another reservation" resets everything ── */
   if (resetBtn) {
